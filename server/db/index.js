@@ -16,7 +16,7 @@ connection.connect(function (err) {
     console.error('error connecting: ' + err.stack);
     return;
   } else {
-    console.log('DB connected')
+    console.log('DB connected');
   }
 });
 

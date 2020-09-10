@@ -18,7 +18,7 @@ app.set('port', 3000);
 app.use(morgan('dev'));
 app.use(parser.json());
 
-// Set up our routes
+// Set up our routes  /// What is classes?
 app.use('/classes', router);
 
 // Serve the client files

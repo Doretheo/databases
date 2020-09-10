@@ -14,7 +14,17 @@ module.exports = {
       }
     })
   }, // a function which produces all the messages
-  create: function () {} // a function which can be used to insert a message into the database
+  //two arguments with our schemea
+  create: function (text,userName) {
+    db.query(`INSERT INTO messages (id,text,user_name) VALUES (2,'${text}',( SELECT id FROM user WHERE user_name ='${userName}'))`, (err, result) => {
+      if (err) {
+        console.error('error creating message: ' + err.stack)
+      } else {
+        console.log(result)
+      }
+    })
+  } // a function which can be used to insert a message into the database
 };
+module.exports.create('world hello','Bob');
 
-module.exports.getAll();
+// module.exports.getAll();ç
